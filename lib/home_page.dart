@@ -21,7 +21,9 @@ class HomePage extends StatelessWidget {
               child: const Text('Bloc'),
             ),
             TextButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).pushNamed('/cubit');
+              },
               child: const Text('Cubit'),
             ),
           ],

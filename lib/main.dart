@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'home_page.dart';
 import 'page_bloc/bloc/counter_bloc.dart';
 import 'page_bloc/counter_bloc_page.dart';
 import 'page_cubit/counter_cubit_page.dart';
+import 'page_cubit/cubit/counter_cubit.dart';
 
 void main() {
   runApp(const MyApp());
@@ -25,7 +27,10 @@ class MyApp extends StatelessWidget {
               create: (_) => CounterBloc(),
               child: const CounterBlocPage(),
             ),
-        '/cubit': (context) => const CounterCubitPage(),
+        '/cubit': (_) => BlocProvider(
+              create: (_) => CounterCubit(),
+              child: const CounterCubitPage(),
+            ),
       },
       home: const HomePage(),
     );
