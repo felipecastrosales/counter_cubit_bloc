@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'home_page.dart';
+import 'page_bloc/bloc/counter_bloc.dart';
 import 'page_bloc/counter_bloc_page.dart';
 import 'page_cubit/counter_cubit_page.dart';
 
@@ -19,7 +21,10 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       routes: {
-        '/bloc': (context) => const CounterBlocPage(),
+        '/bloc': (_) => BlocProvider(
+              create: (_) => CounterBloc(),
+              child: const CounterBlocPage(),
+            ),
         '/cubit': (context) => const CounterCubitPage(),
       },
       home: const HomePage(),
