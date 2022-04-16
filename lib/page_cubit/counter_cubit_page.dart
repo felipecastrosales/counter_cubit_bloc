@@ -23,6 +23,7 @@ class CounterCubitPage extends StatelessWidget {
             BlocBuilder<CounterCubit, CounterState>(
               builder: (context, state) {
                 developer.log('build', name: 'BlocBuilder');
+                developer.log('${state.runtimeType}', name: 'runtimeType');
                 return Text('Counter ${state.counter}');
               },
             ),
