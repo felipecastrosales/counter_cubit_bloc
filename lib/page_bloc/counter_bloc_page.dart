@@ -7,7 +7,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'bloc/counter_bloc.dart';
 
 class CounterBlocPage extends StatelessWidget {
-  const CounterBlocPage({Key? key}) : super(key: key);
+  const CounterBlocPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +34,6 @@ class CounterBlocPage extends StatelessWidget {
                   label: const Text(''),
                   onPressed: () {
                     context.read<CounterBloc>().add(CounterIncrement());
-                    CounterIncrement();
                   },
                 ),
                 TextButton.icon(
@@ -42,7 +41,6 @@ class CounterBlocPage extends StatelessWidget {
                   label: const Text(''),
                   onPressed: () {
                     context.read<CounterBloc>().add(CounterDecrement());
-                    CounterDecrement();
                   },
                 ),
               ],
